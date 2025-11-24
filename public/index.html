@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoramento de Sistemas em Tempo Real</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <ion-icon name="pulse-outline"></ion-icon>
+                <h1>MONITORAMENTO DE SISTEMAS EM TEMPO REAL</h1>
+            </div>
+            <div class="header-right">
+                <div class="status-indicator">
+                    <span class="status-dot online"></span>
+                    <span>Conectado</span>
+                </div>
+                <div class="users-connected">
+                    <ion-icon name="people-outline"></ion-icon>
+                    <span id="userCount">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="metrics-cards">
+            <div class="metric-card" id="cpu-card">
+                <div class="metric-header">
+                    <ion-icon name="hardware-chip-outline"></ion-icon>
+                    <h3>CPU</h3>
+                </div>
+                <div class="metric-value">
+                    <span id="cpuValue">0</span>
+                    <span class="metric-unit">%</span>
+                </div>
+                <div class="metric-status" id="cpuStatus">Normal</div>
+            </div>
+
+            <div class="metric-card" id="memory-card">
+                <div class="metric-header">
+                    <ion-icon name="server-outline"></ion-icon>
+                    <h3>Memória RAM</h3>
+                </div>
+                <div class="metric-value">
+                    <span id="memoryValue">0</span>
+                    <span class="metric-unit">%</span>
+                </div>
+                <div class="metric-status" id="memoryStatus">Normal</div>
+            </div>
+
+            <div class="metric-card" id="requests-card">
+                <div class="metric-header">
+                    <ion-icon name="swap-horizontal-outline"></ion-icon>
+                    <h3>Requisições/s</h3>
+                </div>
+                <div class="metric-value">
+                    <span id="requestsValue">0</span>
+                    <span class="metric-unit">req/s</span>
+                </div>
+                <div class="metric-status" id="requestsStatus">Normal</div>
+            </div>
+
+            <div class="metric-card" id="response-card">
+                <div class="metric-header">
+                    <ion-icon name="time-outline"></ion-icon>
+                    <h3>Tempo de Resposta</h3>
+                </div>
+                <div class="metric-value">
+                    <span id="responseValue">0</span>
+                    <span class="metric-unit">ms</span>
+                </div>
+                <div class="metric-status" id="responseStatus">Normal</div>
+            </div>
+        </section>
+
+        <section class="charts-section">
+            <div class="chart-container">
+                <div class="chart-header">
+                    <h3><ion-icon name="analytics-outline"></ion-icon> Utilização de CPU e Memória</h3>
+                </div>
+                <canvas id="systemChart"></canvas>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-header">
+                    <h3><ion-icon name="trending-up-outline"></ion-icon> Requisições e Tempo de Resposta</h3>
+                </div>
+                <canvas id="performanceChart"></canvas>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <div class="alerts-container">
+                <div class="section-header">
+                    <h3><ion-icon name="warning-outline"></ion-icon> Alertas Recentes</h3>
+                    <span class="badge" id="alertCount">0</span>
+                </div>
+                <div class="alerts-list" id="alertsList">
+                    <div class="no-data">
+                        <ion-icon name="checkmark-circle-outline"></ion-icon>
+                        <p>Nenhum alerta no momento</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="logs-container">
+                <div class="section-header">
+                    <h3><ion-icon name="terminal-outline"></ion-icon> Logs do Sistema</h3>
+                    <button class="clear-btn" id="clearLogs">
+                        <ion-icon name="trash-outline"></ion-icon> Limpar
+                    </button>
+                </div>
+                <div class="logs-list" id="logsList">
+                    <div class="no-data">
+                        <ion-icon name="reader-outline"></ion-icon>
+                        <p>Aguardando logs...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

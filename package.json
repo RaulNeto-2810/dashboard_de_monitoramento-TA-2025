@@ -1,0 +1,29 @@
+{
+    "name": "dashboard-monitoramento",
+    "version": "1.0.0",
+    "description": "Dashboard web de monitoramento em tempo real com Socket.io",
+    "main": "src/server.js",
+    "scripts": {
+        "start": "node src/server.js",
+        "dev": "nodemon src/server.js"
+    },
+    "keywords": [
+        "dashboard",
+        "monitoring",
+        "real-time",
+        "socket.io",
+        "express",
+        "metrics"
+    ],
+    "author": "Raul Torres da Silva Neto",
+    "dependencies": {
+        "express": "^4.18.2",
+        "socket.io": "^4.6.1"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.1"
+    },
+    "engines": {
+        "node": ">=14.0.0"
+    }
+}
