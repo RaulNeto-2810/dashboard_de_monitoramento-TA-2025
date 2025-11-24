@@ -265,28 +265,6 @@ Otimizações implementadas:
 - Histórico limitado de métricas (30 pontos)
 - Remoção automática de toasts após 5 segundos
 
-## 🤝 Contribuindo
-
-Para contribuir com o projeto:
-
-1. Faça um fork do repositório
-2. Crie uma branch para sua feature (`git checkout -b feature/NovaFuncionalidade`)
-3. Commit suas mudanças (`git commit -m 'Adiciona nova funcionalidade'`)
-4. Push para a branch (`git push origin feature/NovaFuncionalidade`)
-5. Abra um Pull Request
-
-## 📝 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
-
 ## 👨‍💻 Desenvolvimento
 
 Desenvolvido como projeto de demonstração de dashboard em tempo real com Node.js, Express e Socket.io.
-
-## 📞 Suporte
-
-Para dúvidas ou problemas, abra uma issue no repositório do projeto.
-
----
-
-**Nota**: Este é um projeto de demonstração. As métricas são simuladas e não refletem dados reais de sistema.
